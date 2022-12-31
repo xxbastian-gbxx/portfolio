@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home | Sebastian Große</title>
+    
+</head>
+<body class="">
+        <header id="header">
+            <div class="header-bg"></div>
+            <div class="header-container">
+                <div class="header-breadcrumb">
+                    solveme <span>.dev()</span>
+                </div>
+
+                <button class="header-nav-button" type="button" id="header-nav-button">
+                    <span class="dots d1"></span>
+                    <span class="dots d1"></span>
+                    <span class="dots d1"></span>
+                </button>
+
+                <nav class="header-nav">
+                    <button class="header-nav-close-button" type="button" id="header-nav-close-button">
+                        <span class="label">✕</span>
+                    </button>
+
+                    <ul>
+                        <li><a href="" class="router-link-exact-active router-link-active" aria-current="page">.dev()</a></li>
+                        <li><a href="">.about()</a></li>
+                        <li><a href="">.projects()</a></li>
+                        <li><a href="">.contact()</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+       
+
+</body>
+
+<script>
+$(document).ready(function () {
+    globalThis.defaultClick = new Audio("./sounds/default-click.wav");
+
+    globalThis.defaultHover = new Audio("./sounds/default-hover.wav");
+    
+})
+
+$("#header-nav-button").click(function () {
+    console.log("header-nav-button clicked")
+
+    $(".header-nav").css("transform", "translate3d(0%,0,0)")
+    $(".header-nav-button").css("display", "none")
+})
+
+$("#header-nav-close-button").click(function () {
+    console.log("header-nav-close-button clicked")
+
+    $($(".header-nav-button").css("display", "flex"))
+    $(".header-nav").css("transform", "translate3d(110%,0,0)")
+})
+
+$("button, a").click(function () {
+    console.log("played" + defaultClick)
+
+    defaultClick.play()
+})
+
+$("button, a").mouseenter(function () {
+    console.log("played" + defaultHover)
+
+    defaultHover.play()
+})
+</script>
+</html>
