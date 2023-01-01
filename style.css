@@ -11,6 +11,8 @@
     --bgLight: radial-gradient(var(--bg),transparent,var(--purple) 130%);
     --gray: grey;
     --comment: #B8B5B0;
+
+    --header-link-spacing: .04em;
   }
 
 
@@ -110,9 +112,6 @@ body {
 .header-nav {
     display: flex;
     align-items: center;
-/*     transition-property: transform;
-    transition-duration: .5s;
-    transition-timing-function: ease-in-out; */
   }
 
 @media screen and (max-width: 768px){
@@ -205,6 +204,7 @@ body {
     color: #dbdbdb;
     transition: color .4s ease-out;
     line-height: 1;
+    letter-spacing: var(--header-link-spacing);
   }
 
 .header-nav a:hover {
@@ -229,6 +229,7 @@ p{
     color: #dbdbdb;
 }
 
-
-
-  
+.greeting-text{
+  color: var(--light);
+  padding: 20% 0 0 15%;
+}

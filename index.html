@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+<!--     <script src="https://cdn.tailwindcss.com"></script> -->
     <title>Home | Sebastian Große</title>
     
 </head>
@@ -17,7 +17,7 @@
             <div class="header-container">
                 <a href="">
                     <div class="header-breadcrumb">
-                        solveme <span>.dev()</span>
+                        solveme<span>.dev()</span>
                     </div>
                 </a>
 
@@ -41,6 +41,26 @@
                 </nav>
             </div>
         </header>
+
+
+        <div class="greeting-text">
+            <div>
+                <span>Hallo</span>, I'm Sebastian.
+            </div>
+    
+            <div>
+                Student and mainly Front-End Developer based in Saxony, Germany.
+            </div>
+    
+            <div>
+                I do
+            </div>
+    
+            <div class="lang-components">
+    
+            </div>
+        </div>
+
 
        
 
@@ -68,7 +88,7 @@ $("#header-nav-button").click(function () {
     $(".header-nav").css("transform", "translate3d(0%,0,0)")
     $(".header-nav-button").css("display", "none")
 
-    $(".header-nav li").fadeOut(.001)
+    $(".header-nav li").fadeOut(0)
 
     $("#li-01").fadeIn(750)
     $("#li-02").fadeIn(1500)
@@ -79,17 +99,8 @@ $("#header-nav-button").click(function () {
 $("#header-nav-close-button").click(function () {
     console.info("header-nav-close-button clicked")
 
-    $(".header-nav li").fadeIn(.001)
-
-    $("#li-01").fadeOut(750)
-    $("#li-02").fadeOut(1500)
-    $("#li-03").fadeOut(2250)
-    $("#li-04").fadeOut(3000)
-
-
     $(".header-nav-button").css("display", "flex")
-    $(".header-nav").delay(3000).css("transform","translate3d(110%,0,0)")
-
+    $(".header-nav").css("transform","translate3d(110%,0,0)")
 })
 
 $("button, a").click(function () {
