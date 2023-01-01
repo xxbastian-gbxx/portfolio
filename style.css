@@ -25,6 +25,7 @@ html {
 
 body {
     background-color: var(--bg);
+    overflow: hidden;
 }
 
 *{
@@ -109,6 +110,9 @@ body {
 .header-nav {
     display: flex;
     align-items: center;
+/*     transition-property: transform;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out; */
   }
 
 @media screen and (max-width: 768px){

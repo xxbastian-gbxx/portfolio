@@ -33,10 +33,10 @@
                     </button>
 
                     <ul>
-                        <li><a href="" class="router-link-exact-active router-link-active" aria-current="page">.dev()</a></li>
-                        <li><a href="">.about()</a></li>
-                        <li><a href="">.projects()</a></li>
-                        <li><a href="">.contact()</a></li>
+                        <li id="li-01"><a href="" class="router-link-exact-active router-link-active" aria-current="page">.dev()</a></li>
+                        <li id="li-02"><a href="">.about()</a></li>
+                        <li id="li-03"><a href="">.projects()</a></li>
+                        <li id="li-04"><a href="">.contact()</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,31 +51,55 @@ $(document).ready(function () {
     globalThis.defaultClick = new Audio("./sounds/default-click.wav");
 
     globalThis.defaultHover = new Audio("./sounds/default-hover.wav");
+
+    globalThis.clickSelectSuccess = new Audio("./sounds/click-select-success.wav");
+
+    globalThis.clickError = new Audio("./sounds/click-error.wav");
+    
+    globalThis.clickClose = new Audio("./sounds/click-close.wav");
+
+    globalThis.summaryOpen = new Audio("./sounds/summary-open.wav");
     
 })
 
 $("#header-nav-button").click(function () {
-    console.log("header-nav-button clicked")
+    console.info("header-nav-button clicked")
 
     $(".header-nav").css("transform", "translate3d(0%,0,0)")
     $(".header-nav-button").css("display", "none")
+
+    $(".header-nav li").fadeOut(.001)
+
+    $("#li-01").fadeIn(750)
+    $("#li-02").fadeIn(1500)
+    $("#li-03").fadeIn(2250)
+    $("#li-04").fadeIn(3000)
 })
 
 $("#header-nav-close-button").click(function () {
-    console.log("header-nav-close-button clicked")
+    console.info("header-nav-close-button clicked")
 
-    $($(".header-nav-button").css("display", "flex"))
-    $(".header-nav").css("transform", "translate3d(110%,0,0)")
+    $(".header-nav li").fadeIn(.001)
+
+    $("#li-01").fadeOut(750)
+    $("#li-02").fadeOut(1500)
+    $("#li-03").fadeOut(2250)
+    $("#li-04").fadeOut(3000)
+
+
+    $(".header-nav-button").css("display", "flex")
+    $(".header-nav").delay(3000).css("transform","translate3d(110%,0,0)")
+
 })
 
 $("button, a").click(function () {
-    console.log("played" + defaultClick)
+    console.info("played" + defaultClick)
 
     defaultClick.play()
 })
 
 $("button, a").mouseenter(function () {
-    console.log("played" + defaultHover)
+    console.info("played" + defaultHover)
 
     defaultHover.play()
 })
